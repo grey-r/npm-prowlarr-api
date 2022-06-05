@@ -1,0 +1,4 @@
+{
+  "extends": "./node_modules/gts/",
+  "ignorePatterns": ["app/build/**/*.*","/build/**/*.*"]
+}

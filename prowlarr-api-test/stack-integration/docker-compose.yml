@@ -1,0 +1,23 @@
+version: "3.0"
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:develop
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    logging:
+      driver: none
+    volumes:
+      - ./prowlarr-config:/config
+  test:
+    depends_on: [prowlarr]
+    build:
+      context: ../../prowlarr-api/
+    pull_policy: build
+    container_name: prowlarr-test
+    command: npm t
+    environment:
+      - BASE_URL=http://prowlarr/
+      - API_KEY=94fc35cf7e332ccf9bde932477a59be5

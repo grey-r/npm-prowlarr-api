@@ -13,18 +13,15 @@ logs
 results
 tmp
 
-# Build
-public/css/main.css
-
 # Coverage reports
-coverage
+*/coverage
 
 # API keys and secrets
 .env
 
 # Dependency directory
-node_modules
-bower_components
+*/node_modules
+*/bower_components
 
 # Editors
 .idea
@@ -35,9 +32,12 @@ bower_components
 Thumbs.db
 
 # Ignore built ts files
-dist/**/*
-build/test/*
-build/src/*
+*/dist/**/*
+*/build
 
 # ignore yarn.lock
 yarn.lock
+
+#ignore everything except predefined config
+*/*/prowlarr-config/*
+!*/*/prowlarr-config/config.xml
