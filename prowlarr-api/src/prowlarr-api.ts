@@ -1,26 +1,105 @@
-import {Axios} from 'axios';
+export {ApiError} from './core/ApiError';
+export {CancelablePromise, CancelError} from './core/CancelablePromise';
+export {ProwlarrAPI} from './core/OpenAPI';
+export type {OpenAPIConfig} from './core/OpenAPI';
 
-class ProwlarrAPI {
-  private static readonly defaultHeaders: {[key: string]: string} = {
-    'Content-Type': 'application/json',
-  };
+export type {ApplicationResource} from './models/ApplicationResource';
+export {ApplicationSyncLevel} from './models/ApplicationSyncLevel';
+export {ApplyTags} from './models/ApplyTags';
+export type {AppProfileResource} from './models/AppProfileResource';
+export {AuthenticationType} from './models/AuthenticationType';
+export type {BackupResource} from './models/BackupResource';
+export {BackupType} from './models/BackupType';
+export {BookSearchParam} from './models/BookSearchParam';
+export {CertificateValidationType} from './models/CertificateValidationType';
+export type {Command} from './models/Command';
+export {CommandPriority} from './models/CommandPriority';
+export type {CommandResource} from './models/CommandResource';
+export {CommandStatus} from './models/CommandStatus';
+export {CommandTrigger} from './models/CommandTrigger';
+export type {CustomFilterResource} from './models/CustomFilterResource';
+export type {DevelopmentConfigResource} from './models/DevelopmentConfigResource';
+export type {DownloadClientConfigResource} from './models/DownloadClientConfigResource';
+export type {DownloadClientResource} from './models/DownloadClientResource';
+export {DownloadProtocol} from './models/DownloadProtocol';
+export type {Field} from './models/Field';
+export {HealthCheckResult} from './models/HealthCheckResult';
+export type {HealthResource} from './models/HealthResource';
+export {HistoryEventType} from './models/HistoryEventType';
+export type {HistoryResource} from './models/HistoryResource';
+export type {HistoryResourcePagingResource} from './models/HistoryResourcePagingResource';
+export type {HostConfigResource} from './models/HostConfigResource';
+export type {HostStatistics} from './models/HostStatistics';
+export type {HttpUri} from './models/HttpUri';
+export type {IndexerCapabilityResource} from './models/IndexerCapabilityResource';
+export type {IndexerCategory} from './models/IndexerCategory';
+export type {IndexerEditorResource} from './models/IndexerEditorResource';
+export {IndexerPrivacy} from './models/IndexerPrivacy';
+export type {IndexerProxyResource} from './models/IndexerProxyResource';
+export type {IndexerResource} from './models/IndexerResource';
+export type {IndexerStatistics} from './models/IndexerStatistics';
+export type {IndexerStatsResource} from './models/IndexerStatsResource';
+export type {IndexerStatusResource} from './models/IndexerStatusResource';
+export type {LanguageResource} from './models/LanguageResource';
+export type {LogFileResource} from './models/LogFileResource';
+export type {LogResource} from './models/LogResource';
+export type {LogResourcePagingResource} from './models/LogResourcePagingResource';
+export {MovieSearchParam} from './models/MovieSearchParam';
+export {MusicSearchParam} from './models/MusicSearchParam';
+export type {NotificationResource} from './models/NotificationResource';
+export type {PagingResourceFilter} from './models/PagingResourceFilter';
+export type {ProviderMessage} from './models/ProviderMessage';
+export {ProviderMessageType} from './models/ProviderMessageType';
+export {ProxyType} from './models/ProxyType';
+export type {ReleaseResource} from './models/ReleaseResource';
+export {SearchParam} from './models/SearchParam';
+export type {SelectOption} from './models/SelectOption';
+export {SortDirection} from './models/SortDirection';
+export type {TagDetailsResource} from './models/TagDetailsResource';
+export type {TagResource} from './models/TagResource';
+export type {TaskResource} from './models/TaskResource';
+export type {TimeSpan} from './models/TimeSpan';
+export {TvSearchParam} from './models/TvSearchParam';
+export type {UiConfigResource} from './models/UiConfigResource';
+export type {UpdateChanges} from './models/UpdateChanges';
+export {UpdateMechanism} from './models/UpdateMechanism';
+export type {UpdateResource} from './models/UpdateResource';
+export type {UserAgentStatistics} from './models/UserAgentStatistics';
+export type {Version} from './models/Version';
 
-  private client: Axios;
-
-  public constructor(url: string, apiKey: string) {
-    this.client = new Axios({
-      baseURL: url,
-      headers: {
-        ...ProwlarrAPI.defaultHeaders,
-        'X-Api-Key': apiKey,
-      },
-    });
-  }
-
-  public async getHealth(): Promise<any> {
-    const response = await this.client.get('api/v1/health');
-    return response.data;
-  }
-}
-
-export default ProwlarrAPI;
+export {ApplicationService} from './services/ApplicationService';
+export {AppProfileService} from './services/AppProfileService';
+export {AuthenticationService} from './services/AuthenticationService';
+export {BackupService} from './services/BackupService';
+export {CommandService} from './services/CommandService';
+export {CustomFilterService} from './services/CustomFilterService';
+export {DevelopmentConfigService} from './services/DevelopmentConfigService';
+export {DownloadClientService} from './services/DownloadClientService';
+export {DownloadClientConfigService} from './services/DownloadClientConfigService';
+export {FileSystemService} from './services/FileSystemService';
+export {HealthService} from './services/HealthService';
+export {HistoryService} from './services/HistoryService';
+export {HostConfigService} from './services/HostConfigService';
+export {IndexerService} from './services/IndexerService';
+export {IndexerDefaultCategoriesService} from './services/IndexerDefaultCategoriesService';
+export {IndexerEditorService} from './services/IndexerEditorService';
+export {IndexerProxyService} from './services/IndexerProxyService';
+export {IndexerStatsService} from './services/IndexerStatsService';
+export {IndexerStatusService} from './services/IndexerStatusService';
+export {InitializeJsService} from './services/InitializeJsService';
+export {LanguageService} from './services/LanguageService';
+export {LocalizationService} from './services/LocalizationService';
+export {LogService} from './services/LogService';
+export {LogFileService} from './services/LogFileService';
+export {NewznabService} from './services/NewznabService';
+export {NotificationService} from './services/NotificationService';
+export {QualityProfileSchemaService} from './services/QualityProfileSchemaService';
+export {SearchService} from './services/SearchService';
+export {StaticResourceService} from './services/StaticResourceService';
+export {SystemService} from './services/SystemService';
+export {TagService} from './services/TagService';
+export {TagDetailsService} from './services/TagDetailsService';
+export {TaskService} from './services/TaskService';
+export {UiConfigService} from './services/UiConfigService';
+export {UpdateService} from './services/UpdateService';
+export {UpdateLogFileService} from './services/UpdateLogFileService';

@@ -1,10 +1,10 @@
 import 'dotenv/config';
-import ProwlarrAPI from '../../src/prowlarr-api';
+import {HealthService} from '../../src/prowlarr-api';
 
 test('Health GET test', async () => {
-  const api = new ProwlarrAPI(
+  HealthService.configure(
     process.env.BASE_URL ?? '',
     process.env.API_KEY ?? ''
   );
-  expect(await api.getHealth()).toBeTruthy();
+  expect(await HealthService.getHealth()).toBeTruthy();
 });

@@ -6,7 +6,8 @@
     "target": "es6",
     "module": "CommonJS",
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["@types/jest"]
   },
   "include": [
     "src/**/*.ts"

@@ -1,0 +1,38 @@
+import type {DownloadProtocol} from './DownloadProtocol';
+import type {Field} from './Field';
+import type {IndexerCapabilityResource} from './IndexerCapabilityResource';
+import type {IndexerPrivacy} from './IndexerPrivacy';
+import type {IndexerStatusResource} from './IndexerStatusResource';
+import type {ProviderMessage} from './ProviderMessage';
+
+export type IndexerResource = {
+  id?: number;
+  name?: string | null;
+  fields?: Array<Field> | null;
+  implementationName?: string | null;
+  implementation?: string | null;
+  configContract?: string | null;
+  infoLink?: string | null;
+  message?: ProviderMessage;
+  tags?: Array<number> | null;
+  presets?: Array<IndexerResource> | null;
+  indexerUrls?: Array<string> | null;
+  legacyUrls?: Array<string> | null;
+  definitionName?: string | null;
+  description?: string | null;
+  language?: string | null;
+  encoding?: string | null;
+  enable?: boolean;
+  redirect?: boolean;
+  supportsRss?: boolean;
+  supportsSearch?: boolean;
+  supportsRedirect?: boolean;
+  AppProfileId?: number;
+  protocol?: DownloadProtocol;
+  privacy?: IndexerPrivacy;
+  capabilities?: IndexerCapabilityResource;
+  priority?: number;
+  added?: string;
+  status?: IndexerStatusResource;
+  sortName?: string | null;
+};

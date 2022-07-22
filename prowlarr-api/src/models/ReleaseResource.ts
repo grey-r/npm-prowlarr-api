@@ -1,0 +1,32 @@
+import type {DownloadProtocol} from './DownloadProtocol';
+import type {IndexerCategory} from './IndexerCategory';
+
+export type ReleaseResource = {
+  id?: number;
+  guid?: string | null;
+  age?: number;
+  ageHours?: number;
+  ageMinutes?: number;
+  size?: number;
+  files?: number | null;
+  grabs?: number | null;
+  indexerId?: number;
+  indexer?: string | null;
+  subGroup?: string | null;
+  releaseHash?: string | null;
+  title?: string | null;
+  approved?: boolean;
+  imdbId?: number;
+  publishDate?: string;
+  commentUrl?: string | null;
+  downloadUrl?: string | null;
+  infoUrl?: string | null;
+  posterUrl?: string | null;
+  indexerFlags?: Array<string> | null;
+  categories?: Array<IndexerCategory> | null;
+  magnetUrl?: string | null;
+  infoHash?: string | null;
+  seeders?: number | null;
+  leechers?: number | null;
+  protocol?: DownloadProtocol;
+};
