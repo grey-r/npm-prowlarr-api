@@ -34,8 +34,3 @@ jobs:
         id: docker-tests
         working-directory: ./containers/stack-integration
         run: docker-compose up --abort-on-container-exit --exit-code-from prowlarr-test
-      - name: Fail if Docker tests failed
-        env:
-          result_code: ${{ steps.docker-tests.outputs.jest-results }}     
-        run: exit $result_code
-     
