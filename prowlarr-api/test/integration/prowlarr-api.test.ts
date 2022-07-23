@@ -6,5 +6,5 @@ test('Health GET test', async () => {
     process.env.BASE_URL ?? '',
     process.env.API_KEY ?? ''
   );
-  expect(await HealthService.getHealth()).toBeTruthy();
+  expect(await HealthService.getHealth()).toBeFalsy();
 });
