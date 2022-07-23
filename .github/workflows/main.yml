@@ -24,7 +24,11 @@ jobs:
         uses: actions/setup-node@v3.4.1
         with:
           node-version: 14.x
+      - name: NPM Install Dev Requirements
+        working-directory: ./prowlarr-api
+        run: npm install
       - name: NPM Pre-Lint
+        working-directory: ./prowlarr-api
         run: npm run lint
       - name: Docker Test Stack
         id: docker-tests
