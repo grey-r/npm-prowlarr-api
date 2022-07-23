@@ -11,7 +11,7 @@ services:
       driver: none
     volumes:
       - ./prowlarr-config:/config
-  test:
+  prowlarr-test:
     depends_on: [prowlarr]
     build:
       context: ../../prowlarr-api/
