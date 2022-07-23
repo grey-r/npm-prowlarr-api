@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.4.1
         with:
-          node-version: 14.x
+          node-version: 16.x
       - name: NPM Install Dev Requirements
         working-directory: ./prowlarr-api
         run: npm install
@@ -32,7 +32,7 @@ jobs:
         run: npm run lint
       - name: Docker Test Stack
         id: docker-tests
-        working-directory: ./prowlarr-api-test/stack-integration
+        working-directory: ./containers/stack-integration
         run: docker-compose up --abort-on-container-exit --exit-code-from prowlarr-test
       - name: Fail if Docker tests failed
         env:
