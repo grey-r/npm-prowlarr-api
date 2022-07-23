@@ -17,7 +17,7 @@ services:
       context: ../../prowlarr-api/
     pull_policy: build
     container_name: prowlarr-test
-    command: npm t
+    command: sh ci-jest.sh
     environment:
       - BASE_URL=http://prowlarr/
       - API_KEY=94fc35cf7e332ccf9bde932477a59be5

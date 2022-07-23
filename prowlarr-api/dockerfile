@@ -8,6 +8,8 @@ ENV NODE_ENV=development
 COPY ["/*.json", "/*.js", "/*.cjs", "./"]
 COPY ["src/", "./src/"]
 COPY ["test/", "./test/"]
+COPY ./ci/jest.sh ci-jest.sh
 
 RUN npm install -g npm@8
 RUN npm install --development
+RUN chmod +x ci-jest.sh
