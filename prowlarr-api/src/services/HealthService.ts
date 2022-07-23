@@ -10,7 +10,9 @@ export class HealthService extends BaseService {
    * @returns HealthResource Success
    * @throws ApiError
    */
-  public static getHealth(id?: number): CancelablePromise<HealthResource> {
+  public static getHealth(): CancelablePromise<Array<HealthResource>>;
+  //public static getHealth(id: number): CancelablePromise<HealthResource>; //TBD -- not implemented yet in actual software
+  public static getHealth(id?: number): any {
     return __request(this.config, {
       method: 'GET',
       url: '/api/v1/health/' + (id !== undefined ? '{id}' : ''),
