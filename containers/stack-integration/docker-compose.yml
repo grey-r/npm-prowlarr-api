@@ -15,9 +15,10 @@ services:
     depends_on: [prowlarr]
     build:
       context: ../../prowlarr-api/
+      dockerfile: ../containers/prowlarr-api/dockerfile
     pull_policy: build
     container_name: prowlarr-test
-    command: sh ci-jest.sh
+    command: npm t
     environment:
       - BASE_URL=http://prowlarr/
       - API_KEY=94fc35cf7e332ccf9bde932477a59be5

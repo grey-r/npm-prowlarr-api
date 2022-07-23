@@ -4,12 +4,10 @@ FROM node:16-alpine3.14 as base
 
 WORKDIR ./app
 ENV NODE_ENV=development
+RUN npm install -g npm@8
 
-COPY ["/*.json", "/*.js", "/*.cjs", "./"]
+COPY ["*.json", "*.js", "*.cjs", ".*.*", "./"]
 COPY ["src/", "./src/"]
 COPY ["test/", "./test/"]
-COPY ./ci/jest.sh ci-jest.sh
 
-RUN npm install -g npm@8
 RUN npm install --development
-RUN chmod +x ci-jest.sh

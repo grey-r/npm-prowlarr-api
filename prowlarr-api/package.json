@@ -22,7 +22,6 @@
     "prepare": "npm run compile",
     "pretest": "npm run compile",
     "test": "jest --coverage",
-    "test:watch": "jest --watch",
-    "posttest": "npm run lint"
+    "test:watch": "jest --watch"
   }
 }
