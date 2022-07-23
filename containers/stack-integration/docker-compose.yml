@@ -7,6 +7,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
+    expose:
+      - "80"
     logging:
       driver: none
     volumes:
@@ -20,5 +22,5 @@ services:
     container_name: prowlarr-test
     command: npm t
     environment:
-      - BASE_URL=http://prowlarr/
+      - BASE_URL=http://prowlarr
       - API_KEY=94fc35cf7e332ccf9bde932477a59be5
