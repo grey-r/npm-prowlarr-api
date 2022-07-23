@@ -4,10 +4,11 @@ FROM node:16-alpine3.14 as base
 
 WORKDIR ./app
 ENV NODE_ENV=development
-RUN npm install -g npm@8
 
-COPY ["*.json", "*.js", "*.cjs", ".*.*", "./"]
+COPY ["*.json", "./"]
+RUN npm install -g npm@8
+RUN npm install --development
+
+COPY ["*.js", "*.cjs", ".*.*", "./"]
 COPY ["src/", "./src/"]
 COPY ["test/", "./test/"]
-
-RUN npm install --development
